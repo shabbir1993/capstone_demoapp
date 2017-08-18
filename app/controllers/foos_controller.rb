@@ -4,10 +4,12 @@ class FoosController < ApplicationController
   # GET /foos
   def index
     @foos = Foo.all
+    render json: @foos
   end
 
   # GET /foos/1
   def show
+    render json: @foos
   end
 
   # GET /foos/new
@@ -24,7 +26,8 @@ class FoosController < ApplicationController
     @foo = Foo.new(foo_params)
 
     if @foo.save
-      redirect_to @foo, notice: 'Foo was successfully created.'
+     # redirect_to @foo, notice: 'Foo was successfully created.'
+      render :show, @foo, status: :created, location: @foo
     else
       render :new
     end
@@ -33,9 +36,10 @@ class FoosController < ApplicationController
   # PATCH/PUT /foos/1
   def update
     if @foo.update(foo_params)
-      redirect_to @foo, notice: 'Foo was successfully updated.'
+      # redirect_to @foo, notice: 'Foo was successfully updated.'
+      head :no_content
     else
-      render :edit
+      render json: @foo.errors, status: :unprocessable_entity
     end
   end
 
@@ -46,13 +50,13 @@ class FoosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_foo
-      @foo = Foo.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_foo
+    @foo = Foo.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def foo_params
-      params.require(:foo).permit(:name)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def foo_params
+    params.require(:foo).permit(:name)
+  end
 end
