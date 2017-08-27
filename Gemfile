@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.1.3'
-group :development do
-  gem 'listen'
-end
+
+gem 'rails', '4.2.5'
+
+gem 'rails-api'
+
 gem 'spring', :group => :development
+
+
 gem 'pg'
-gem 'rspec-rails'
-gem 'mongoid'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 
 
 # To use ActiveModel has_secure_password

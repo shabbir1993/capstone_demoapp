@@ -16,4 +16,4 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-CapstoneDemoapp::Application.config.secret_token = '0908c59cd66979f55db3351fb9b3dd1e3bed9f3fdd0d805981de1bc48eeaf1add727c2c994b76c6768429ba3d781a387e5c2d2b47f0328b2db60e7e183a1e056'
+CapstoneDemoapp::Application.config.secret_token = '0e6cca018c85b058cfc63d85a1f55df4e8b87e03989931d818ba2520d15ea72777a07e5110cfa8ab711c5f2b72a26ebd49f7f2cdf00c5bfbb697c8c7292c49d2'
