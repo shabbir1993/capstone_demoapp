@@ -7,6 +7,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'rspec-rails'
 gem 'pg', '0.20.0'
+gem 'httparty'
 
 
 

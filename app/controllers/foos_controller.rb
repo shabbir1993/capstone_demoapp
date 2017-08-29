@@ -21,7 +21,8 @@ class FoosController < ApplicationController
     @foo = Foo.new(foo_params)
 
     if @foo.save
-      render json: @foo, status: :created, location: @foo
+      #render json: @foo, status: :created, location: @foo
+      render :show, status: :created, location: @foo
     else
       render json: @foo.errors, status: :unprocessable_entity
     end
